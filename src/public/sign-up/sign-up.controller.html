@@ -1,0 +1,50 @@
+<form name='regForm' novalidate>
+
+    <input  type="text" name="first_name" placeholder="Pick a first name"
+      ng-model="$ctrl.user.first_name"
+      required>
+      <span ng-if="regForm.first_name.$invalid && regForm.first_name.$touched">
+        first name must be entered
+      </span>
+      <br>
+
+      <input type="text" name="last_name" placeholder="Pick a last name"
+        ng-model="$ctrl.user.last_name"
+        required>
+        <span ng-if="regForm.last_name.$invalid && regForm.last_name.$touched">
+          last name must be entered
+        </span>
+        <br>
+
+    <input type="email" name="email_address" placeholder="Email"
+      ng-model="$ctrl.user.email_address"
+      required>
+      <span ng-if="regForm.email_address.$invalid && regForm.email_address.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+    <input type="text" name="phone_number" placeholder="Phone ###-###-####"
+      ng-model="$ctrl.user.phone_number"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone_number.$invalid && regForm.phone_number.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="favorite_dish" placeholder="Pick your favourite dish"
+        ng-model="$ctrl.user.favorite_dish"
+        required>
+        <div ng-if="$ctrl.error">
+            No such menu number exists
+        </div>
+      <br>
+
+    <button
+      ng-disabled="regForm.$invalid"
+      ng-click="$ctrl.submit()">Submit
+    </button>
+    <span ng-if="$ctrl.submitted">
+      Your information has been saved
+    </span>
+  </form>
