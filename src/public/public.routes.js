@@ -12,7 +12,7 @@
     // Routes
     $stateProvider
       .state('public', {
-        abstract: true,
+        absract: true,
         templateUrl: 'src/public/public.html'
       })
       .state('public.home', {
@@ -41,19 +41,17 @@
           }]
         }
       })
-      .state('public.sign-up', {
+      .state('public.signup', {
         url: '/signup',
-        templateUrl: 'src/public/sign-up/sign-up.html',
-        controller: 'SignController',
-        controllerAs: 'regCtrl'
+        templateUrl: 'src/public/signup/signup.html',
+        controller: 'SignupController',
+        controllerAs: 'signupCtrl'
       })
       .state('public.info', {
         url: '/info',
         templateUrl: 'src/public/info/info.html',
         controller: 'InfoController',
         controllerAs: 'infoCtrl'
-      })
-  
-      ;
+      });
   }
   })();

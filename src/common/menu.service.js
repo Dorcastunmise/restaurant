@@ -8,21 +8,17 @@
   MenuService.$inject = ['$http', 'ApiPath'];
   function MenuService($http, ApiPath) {
     var service = this;
-    service.client = {};
+    service.user = {};
   
-  
-    service.saveClient = function(user){
-      service.client= angular.copy(user);
+    service.saveUser = function(user) {
+      service.user = angular.copy(user);
+      console.log(service.user);
     }
   
-    service.getClient = function(){
-      return service.client;
+    service.getUser = function() {
+      return service.user;
     }
-  
-    service.getFavDish = function(short_name){
-      return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
-    }
-  
+    
     service.getCategories = function () {
       return $http.get(ApiPath + '/categories.json').then(function (response) {
         return response.data;
@@ -40,6 +36,10 @@
         return response.data;
       });
     };
+  
+    service.getFavoriteDish = function(short_name) {
+      return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
+    }
   
   }
   

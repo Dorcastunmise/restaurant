@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Restaurant</title>
+    <title>David Chu's China Bistro</title>
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,7 +25,7 @@
             </a>
 
             <div class="navbar-brand">
-              <a href="index.html"><h1>Bon Appetite....</h1></a>
+              <a href="index.html"><h1>Bon appetite....</h1></a>
               <p>
               <img src="images/star-k-logo.png" alt="Kosher certification">
               <span>Kosher Certified</span>
@@ -50,13 +50,13 @@
                 <a ui-sref="public.menu">
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
-              <li>
+              <li ui-sref-active="active">
                 <a ui-sref="public.info">
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
-              <li>
-                <a ui-sref="public.sign-up">
-                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+              <li ui-sref-active="active"> 
+                <a ui-sref="public.signup">
+                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Signup</a>
               </li>
               <li id="phone" class="hidden-xs">
                 <a href="tel:410-602-5008">
@@ -132,10 +132,8 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
-    <script src="src/public/sign-up/signController.js"></script>
-    <script src="src/public/sign-up/sign-up-component.js"></script>
-    <script src="src/public/info/infoController.js"></script>
-    <script src="src/public/UserDataService.js"></script>
+    <script src="src/public/signup/signup.controller.js"></script>
+    <script src="src/public/info/info.controller.js"></script>
 
     <!-- ADMIN SITE -->
 
