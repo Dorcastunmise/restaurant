@@ -1,0 +1,47 @@
+<form name="regForm" novalidate>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="$ctrl.user.email"
+       required>
+       <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+              Must be a valid email address: handle@domain format
+       </span>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" ng-model="$ctrl.user.firstName"
+       required minlength="2" ng-maxlength="16">
+      <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
+        First name must be between 2 and 16 characters
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last name</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name"  ng-model="$ctrl.user.lastName"
+       required minlength="2" ng-maxlength="16">
+      <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
+        Last name must not between 2 and 16 characters
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone number</label>
+      <input type="tel" class="form-control" id="phone"name="phone" placeholder="Phone ###-###-####" ng-model="$ctrl.user.phone"
+       required pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="favoriteItem">Menu number</label>
+      <input type="text" class="form-control" id="favoriteItem" name="favoriteItem" placeholder="Menu number"  ng-model="$ctrl.user.favoriteItem"
+       required minlength="2" ng-maxlength="4">
+      <span ng-if="regForm.favoriteItem.$invalid && regForm.favoriteItem.$touched">
+        Menu number must be between 2 and 4 characters
+      </span>
+      <span ng-if="$ctrl.wrongMenuItem">
+        No such menu number exists
+      </span>
+    </div>
+    <button type="submit" ng-disabled="regForm.$invalid" class="btn btn-default"ng-click="$ctrl.submit()">Submit</button>
+    {{ $ctrl.resultMessage }}
+  </form>

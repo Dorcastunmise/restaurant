@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">User information</h2>
+  <div class="text-center" ng-if="!vm.user">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div class="text-center" ng-if="vm.user">
+    User name: {{ vm.user.firstName }} {{ vm.user.lastName }}<br/>
+    Email: {{ vm.user.email }}<br/>
+    Phone: {{ vm.user.phone }}<br/>
+    Favorite item: {{ vm.user.item.name }}: {{ vm.user.item.description }}<br/>
+      
+  </div>
+  <div class="menu-item-photo" ng-if="vm.user">
+        <div>{{vm.user.item.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{vm.basePath}}/images/{{vm.user.item.short_name}}.jpg" alt="{{$ctrl.user.item.name}}">
+  </div>
+  
+
+</div>
